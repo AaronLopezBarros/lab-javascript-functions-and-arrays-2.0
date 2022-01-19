@@ -1,3 +1,5 @@
+const { arrayBuffer } = require("stream/consumers");
+
 // Iteration #1: Find the maximum
 function maxOfTwoNumbers(num1, num2) {
   if(num1 > num2){
@@ -125,14 +127,28 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(arr) {
+  let arrUnique = []
+
+  if(arr.length === 0) return null
+
+  arr.forEach((word) => {
+    if(!arrUnique.includes(word)) arrUnique.push(word)
+  })
+
+  return arrUnique
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(arr, word) {
+  if(arr.length === 0) return null
+
+  return arr.includes(word)
+}
 
 
 
@@ -151,7 +167,15 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(arr, wordToFind) {
+  let count = 0 
+
+  arr.forEach((word) => {
+    if(word === wordToFind) count ++
+  })
+
+  return count
+}
 
 
 
